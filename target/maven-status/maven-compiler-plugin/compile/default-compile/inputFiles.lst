@@ -1,7 +1,0 @@
-/Users/steffen.reichert/Development/projects/database/src/main/java/de/reichi/database/DatabaseApplication.java
-/Users/steffen.reichert/Development/projects/database/src/main/java/de/reichi/database/entity/ContractIndex.java
-/Users/steffen.reichert/Development/projects/database/src/main/java/de/reichi/database/error/RestResponseEntityExceptionHandler.java
-/Users/steffen.reichert/Development/projects/database/src/main/java/de/reichi/database/error/Errors.java
-/Users/steffen.reichert/Development/projects/database/src/main/java/de/reichi/database/repository/ContractRepository.java
-/Users/steffen.reichert/Development/projects/database/src/main/java/de/reichi/database/entity/Contract.java
-/Users/steffen.reichert/Development/projects/database/src/main/java/de/reichi/database/event/ContractEventHandler.java
