@@ -1,0 +1,45 @@
+version: '3.2'
+
+services:
+  contracts:
+    image: derreichi/contracts:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+      - elasticsearch
+    networks:
+      - contracts
+
+  postgres:
+    image: postgres:latest
+    hostname: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=cgi
+    networks:
+      - contracts
+
+  elasticsearch:
+    image:  elasticsearch:7.14.2
+    hostname: elasticsearch
+    environment:
+      - discovery.type=single-node
+    networks:
+      - contracts
+
+  kibana:
+    image:  kibana:7.14.2
+    hostname: kibana
+    ports:
+      - 5601:5601
+    environment:
+      - discovery.type=single-node
+    depends_on:
+      - elasticsearch
+    networks:
+      - contracts
+
+networks:
+  contracts:
+    driver: bridge

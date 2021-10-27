@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.5.6</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>de.reichi</groupId>
+  <artifactId>database</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>database</name>
+  <description>spring project demonstrating interaction with databases</description>
+
+  <properties>
+    <java.version>11</java.version>
+    <project.build.outputTimestamp>2021-10-27T14:39:00Z</project.build.outputTimestamp>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-rest</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.kafka</groupId>
+      <artifactId>spring-kafka</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.22</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <!--    <dependency>-->
+    <!--      <groupId>com.h2database</groupId>-->
+    <!--      <artifactId>h2</artifactId>-->
+    <!--    </dependency>-->
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>jib-maven-plugin</artifactId>
+        <version>3.1.4</version>
+        <configuration>
+          <from>
+            <image>amazoncorretto:11.0.13-alpine3.14</image>
+          </from>
+          <to>
+            <image>derreichi/contracts</image>
+            <credHelper>osxkeychain</credHelper>
+          </to>
+          <container>
+            <creationTime>${project.build.outputTimestamp}</creationTime>
+            <jvmFlags>
+              <jvmFlag>-Xms512m</jvmFlag>
+              <jvmFlag>-Xmx1024m</jvmFlag>
+            </jvmFlags>
+            <ports>
+              <port>8080</port>
+            </ports>
+          </container>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>dockerBuild</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.dkanejs.maven.plugins</groupId>
+        <artifactId>docker-compose-maven-plugin</artifactId>
+        <version>2.4.0</version>
+        <executions>
+          <execution>
+            <id>up</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>up</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>down</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>down</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <composeFiles>
+            <composeFile>${project.basedir}/src/main/docker/docker-compose.yaml</composeFile>
+          </composeFiles>
+          <detachedMode>true</detachedMode>
+          <removeVolumes>true</removeVolumes>
+          <removeOrphans>true</removeOrphans>
+          <removeImages>true</removeImages>
+          <removeImagesType>local</removeImagesType>
+          <build>true</build>
+          <detail>true</detail>
+          <verbose>false</verbose>
+          <projectName>my-cloud</projectName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

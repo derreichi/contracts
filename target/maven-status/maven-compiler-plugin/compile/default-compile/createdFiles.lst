@@ -1,0 +1,7 @@
+de/reichi/database/event/ContractEventHandler.class
+de/reichi/database/entity/ContractIndex.class
+de/reichi/database/repository/ContractRepository.class
+de/reichi/database/entity/Contract.class
+de/reichi/database/DatabaseApplication.class
+de/reichi/database/error/Errors.class
+de/reichi/database/error/RestResponseEntityExceptionHandler.class
