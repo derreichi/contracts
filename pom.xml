@@ -16,7 +16,7 @@
 
   <properties>
     <java.version>11</java.version>
-    <project.build.outputTimestamp>2021-10-27T14:39:00Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2021-10-28T14:39:00Z</project.build.outputTimestamp>
   </properties>
 
   <dependencies>
@@ -89,9 +89,11 @@
             <jvmFlags>
               <jvmFlag>-Xms512m</jvmFlag>
               <jvmFlag>-Xmx1024m</jvmFlag>
+              <jvmFlag>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005</jvmFlag>
             </jvmFlags>
             <ports>
               <port>8080</port>
+              <port>5005</port>
             </ports>
           </container>
         </configuration>
