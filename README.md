@@ -19,3 +19,7 @@ The following guides illustrate how to use some features concretely:
 * [Accessing Neo4j Data with REST](https://spring.io/guides/gs/accessing-neo4j-data-rest/)
 * [Accessing MongoDB Data with REST](https://spring.io/guides/gs/accessing-mongodb-data-rest/)
 
+### Build and run it with
+```console
+mvn clean package pre-integration-test -DskipTests
+```
