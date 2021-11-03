@@ -12,7 +12,7 @@
   <artifactId>database</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>database</name>
-  <description>spring project demonstrating interaction with databases</description>
+  <description>demo project for training and exploring purposes</description>
 
   <properties>
     <java.version>11</java.version>
