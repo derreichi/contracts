@@ -9,6 +9,7 @@ services:
     depends_on:
       - postgres
       - elasticsearch
+      - kafka
     networks:
       - contracts
 
