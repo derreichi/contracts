@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   contracts:
-    image: derreichi/contracts:latest
+    image: derreichi/contracts:0.0.1-SNAPSHOT
     ports:
       - 8080:8080
       - 5005:5005
