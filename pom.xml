@@ -12,7 +12,7 @@
   <artifactId>database</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>database</name>
-  <description>demo project for training and exploring purposes</description>
+  <description>demo project for training and exploring purposes with git flow</description>
 
   <properties>
     <java.version>11</java.version>
