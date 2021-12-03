@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Jokes {
+public class Joke {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

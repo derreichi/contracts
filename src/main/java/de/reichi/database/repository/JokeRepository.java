@@ -1,11 +1,10 @@
 package de.reichi.database.repository;
 
-import de.reichi.database.entity.Jokes;
+import de.reichi.database.entity.Joke;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import org.springframework.stereotype.Repository;
 
 @RepositoryRestResource
-public interface JokesRepository extends JpaRepository<Jokes, Long> {
+public interface JokeRepository extends JpaRepository<Joke, Long> {
 
 }
