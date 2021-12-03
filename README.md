@@ -10,6 +10,7 @@ For further reference, please consider the following sections:
 * [Validation](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#boot-features-validation)
 * [Spring Data Elasticsearch (Access+Driver)](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#boot-features-elasticsearch)
 * [Rest Repositories](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#howto-use-exposing-spring-data-repositories-rest-endpoint)
+* [Security](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#features.security)
 
 ### Guides
 The following guides illustrate how to use some features concretely:
