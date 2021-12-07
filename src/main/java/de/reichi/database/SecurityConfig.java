@@ -18,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .antMatchers("/greetings*").hasRole(USER)
       .antMatchers("/hello/search").hasRole(ADMIN)
       .and()
-      .formLogin();
+      .formLogin(); //TODO: switch formlogin to something else
   }
 
   @Autowired
@@ -26,6 +26,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     builder.inMemoryAuthentication()
       .withUser("reichi").password("{noop}123456").roles(USER)
       .and()
-      .withUser("cgi").password("{noop}cgi").roles(USER, ADMIN);
+      .withUser("cgi").password("{noop}cgi").roles(USER, ADMIN)
+      .and()
+      .withUser("dat").password("{noop}dat").roles(USER, ADMIN)
+      .and()
+      .withUser("tim").password("{noop}tim").roles(USER, ADMIN)
+      .and()
+      .withUser("ranjith").password("{noop}ranjith").roles(USER, ADMIN);
   }
 }
