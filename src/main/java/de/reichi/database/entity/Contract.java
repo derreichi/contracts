@@ -26,3 +26,4 @@ public class Contract {
   @Email(regexp = ".+@.+\\..+", message = "An email has to look like an email!!!")
   private String email;
 }
+
