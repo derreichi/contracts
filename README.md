@@ -22,5 +22,5 @@ The following guides illustrate how to use some features concretely:
 ```console
 mvn clean package pre-integration-test -DskipTests
 ```
-### copntainerized Infrastructure
+### containerized Infrastructure
 ![container infrafstructure](infrastructure.drawio.png "container infrafstructure")
