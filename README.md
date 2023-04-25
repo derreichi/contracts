@@ -22,5 +22,8 @@ The following guides illustrate how to use some features concretely:
 ```console
 mvn clean package pre-integration-test -DskipTests
 ```
+### Web API Documentation
+The Swagger UI documentation is located at [http://localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/)
+
 ### containerized Infrastructure
 ![container infrafstructure](infrastructure.drawio.png "container infrafstructure")
